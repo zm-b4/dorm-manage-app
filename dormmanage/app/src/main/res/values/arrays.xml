@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 性别列表 -->
+    <string-array name="gender_list">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+
+    <!-- 园区列表 -->
+    <string-array name="campus_list">
+        <item>桃园</item>
+        <item>李园</item>
+        <item>桂园</item>
+    </string-array>
+
+    <!-- 床位号列表 -->
+    <string-array name="bed_num_list">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+    <!-- 学院列表 -->
+    <string-array name="college_list">
+        <item>光电工程学院</item>
+        <item>新能源学院</item>
+        <item>人工智能学院</item>
+        <item>机器人与自动化学院</item>
+        <item>智能网联汽车学院</item>
+        <item>汽车商学院</item>
+        <item>数字经济学院</item>
+        <item>法学院/知识产权学院</item>
+        <item>外语外贸学院</item>
+        <item>东风汽车工程师学院/智能汽车现代产业学院</item>
+        <item>汽车智能装备产业学院</item>
+        <item>汽车未来技术学院</item>
+        <item>汽车智能制造学院</item>
+        <item>汽车材料学院</item>
+        <item>设计学院</item>
+        <item>体育学院</item>
+        <item>汽车工程学院</item>
+        <item>马克思主义学院</item>
+        <item>继续教育学院</item>
+        <item>国际教育学院</item>
+        <item>创新创业教育学院</item>
+    </string-array>
+</resources>

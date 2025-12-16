@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:padding="16dp">
+
+    <!-- 新增页面根布局 -->
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#F5F7FA"
+        android:fitsSystemWindows="true"
+        android:paddingTop="20dp">
+
+        <!-- 标题栏 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="新增学生宿舍信息"
+                android:textSize="20sp"
+                android:textColor="@color/primary_dark"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="24dp"
+                android:background="@color/text_gray"
+                android:layout_marginHorizontal="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="必填项 *"
+                android:textSize="12sp"
+                android:textColor="@color/error_red"/>
+        </LinearLayout>
+
+        <!-- 表单卡片 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/shape_card"
+            android:elevation="8dp">
+
+            <!-- 学号 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="学号 *"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_black"
+                    android:layout_marginBottom="6dp"/>
+
+                <EditText
+                    android:id="@+id/et_stu_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="请输入学号（如：20240001）"
+                    android:textColorHint="@color/text_gray"
+                    android:textColor="@color/text_black"
+                    android:background="@drawable/shape_edittext"
+                    android:inputType="text"
+                    android:maxLines="1"/>
+            </LinearLayout>
+
+            <!-- 姓名 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="姓名 *"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_black"
+                    android:layout_marginBottom="6dp"/>
+
+                <EditText
+                    android:id="@+id/et_stu_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="请输入姓名"
+                    android:textColorHint="@color/text_gray"
+                    android:textColor="@color/text_black"
+                    android:background="@drawable/shape_edittext"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"/>
+            </LinearLayout>
+
+            <!-- 性别选择 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="性别 *"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_black"
+                    android:layout_marginBottom="6dp"/>
+
+                <Spinner
+                    android:id="@+id/sp_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_edittext"
+                    android:padding="12dp"
+                    android:entries="@array/gender_list"/>
+            </LinearLayout>
+
+            <!-- 园区+楼栋号（横向布局） -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <!-- 园区选择 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginRight="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="园区 *"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_black"
+                        android:layout_marginBottom="6dp"/>
+
+                    <Spinner
+                        android:id="@+id/sp_campus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_edittext"
+                        android:padding="12dp"
+                        android:entries="@array/campus_list"/>
+                </LinearLayout>
+
+                <!-- 楼栋号选择 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="楼栋号 *"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_black"
+                        android:layout_marginBottom="6dp"/>
+
+                    <Spinner
+                        android:id="@+id/sp_building_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_edittext"
+                        android:padding="12dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 宿舍号+床位号（横向布局） -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <!-- 宿舍号 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginRight="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="宿舍号 *"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_black"
+                        android:layout_marginBottom="6dp"/>
+
+                    <EditText
+                        android:id="@+id/et_dorm_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="如：402"
+                        android:textColorHint="@color/text_gray"
+                        android:textColor="@color/text_black"
+                        android:background="@drawable/shape_edittext"
+                        android:inputType="number"
+                        android:maxLines="1"/>
+                </LinearLayout>
+
+                <!-- 床位号 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="床位号 *"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_black"
+                        android:layout_marginBottom="6dp"/>
+
+                    <Spinner
+                        android:id="@+id/sp_bed_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_edittext"
+                        android:padding="12dp"
+                        android:entries="@array/bed_num_list"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 学院选择 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="学院 *"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_black"
+                    android:layout_marginBottom="6dp"/>
+
+                <Spinner
+                    android:id="@+id/sp_college"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_edittext"
+                    android:padding="12dp"/>
+            </LinearLayout>
+
+            <!-- 班级 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="班级 *"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_black"
+                    android:layout_marginBottom="6dp"/>
+
+                <EditText
+                    android:id="@+id/et_class"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="请输入班级（如：计科2401）"
+                    android:textColorHint="@color/text_gray"
+                    android:textColor="@color/text_black"
+                    android:background="@drawable/shape_edittext"
+                    android:inputType="text"
+                    android:maxLines="1"/>
+            </LinearLayout>
+
+            <!-- 电话 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="联系电话"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_black"
+                    android:layout_marginBottom="6dp"/>
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="请输入手机号（11位）"
+                    android:textColorHint="@color/text_gray"
+                    android:textColor="@color/text_black"
+                    android:background="@drawable/shape_edittext"
+                    android:inputType="phone"
+                    android:maxLines="1"/>
+            </LinearLayout>
+
+            <!-- 入住时间 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="入住时间 *"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_black"
+                    android:layout_marginBottom="6dp"/>
+
+                <EditText
+                    android:id="@+id/et_check_in"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="点击选择日期"
+                    android:textColorHint="@color/text_gray"
+                    android:textColor="@color/text_black"
+                    android:background="@drawable/shape_edittext"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:maxLines="1"/>
+            </LinearLayout>
+
+            <!-- 提交按钮 -->
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="提交保存"
+                android:textSize="16sp"
+                android:textColor="@color/text_white"
+                android:background="@drawable/shape_button"
+                android:elevation="4dp"
+                android:stateListAnimator="@null"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

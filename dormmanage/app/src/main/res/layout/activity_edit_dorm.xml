@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true"
+        android:paddingTop="20dp">
+
+        <!-- 标题 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="修改学生宿舍信息"
+            android:textSize="18sp"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            android:layout_marginBottom="15dp"/>
+
+        <!-- 表单卡片 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/bg_white"
+            android:elevation="6dp"
+            android:padding="20dp"
+            android:radius="10dp">
+
+            <!-- 查询学号输入框 -->
+            <EditText
+                android:id="@+id/et_query_stu_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入要修改的学生学号"
+                android:textColorHint="@color/text_gray"
+                android:textColor="@color/text_black"
+                android:padding="10dp"
+                android:layout_marginBottom="15dp"/>
+
+            <!-- 查询按钮 -->
+            <Button
+                android:id="@+id/btn_query"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="查询学生信息"
+                android:background="@color/primary_light"
+                android:textColor="@color/text_white"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- 楼栋 -->
+            <EditText
+                android:id="@+id/et_building"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="楼栋"
+                android:textColorHint="@color/text_gray"
+                android:textColor="@color/text_black"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- 宿舍号 -->
+            <EditText
+                android:id="@+id/et_dorm_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="宿舍号"
+                android:textColorHint="@color/text_gray"
+                android:textColor="@color/text_black"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- 床位号 -->
+            <EditText
+                android:id="@+id/et_bed_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="床位号"
+                android:textColorHint="@color/text_gray"
+                android:textColor="@color/text_black"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- 姓名 -->
+            <EditText
+                android:id="@+id/et_stu_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="姓名"
+                android:textColorHint="@color/text_gray"
+                android:textColor="@color/text_black"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- 学院 -->
+            <EditText
+                android:id="@+id/et_college"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="学院"
+                android:textColorHint="@color/text_gray"
+                android:textColor="@color/text_black"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- 班级 -->
+            <EditText
+                android:id="@+id/et_class"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="班级"
+                android:textColorHint="@color/text_gray"
+                android:textColor="@color/text_black"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- 电话 -->
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="电话"
+                android:inputType="phone"
+                android:textColorHint="@color/text_gray"
+                android:textColor="@color/text_black"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- 入住时间 -->
+            <EditText
+                android:id="@+id/et_check_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="入住时间"
+                android:textColorHint="@color/text_gray"
+                android:textColor="@color/text_black"
+                android:padding="10dp"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- 保存按钮 -->
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="保存修改"
+                android:background="@color/primary"
+                android:textColor="@color/text_white"
+                android:textSize="16sp"
+                android:padding="12dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

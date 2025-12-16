@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8F9FA"
+    android:fitsSystemWindows="true"
+    android:paddingTop="20dp">
+
+    <!-- 标题栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=" 删除学生信息"
+            android:textSize="20sp"
+            android:textColor="@color/primary_dark"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="24dp"
+            android:background="@color/text_gray"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="谨慎操作"
+            android:textSize="12sp"
+            android:textColor="@color/error_red"/>
+    </LinearLayout>
+
+    <!-- 查询区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/shape_card"
+        android:elevation="6dp"
+        android:padding="24dp"
+        android:layout_marginBottom="20dp">
+
+        <EditText
+            android:id="@+id/et_query_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="输入学号/宿舍号查询"
+            android:textColorHint="@color/text_gray"
+            android:textColor="@color/text_black"
+            android:background="@drawable/shape_edittext"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_query"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="查询"
+                android:textSize="16sp"
+                android:textColor="@color/text_white"
+                android:background="@drawable/shape_button"
+                android:elevation="4dp"/>
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="取消"
+                android:textSize="16sp"
+                android:textColor="@color/text_black"
+                android:background="@drawable/shape_button_gray"
+                android:elevation="4dp"
+                android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 结果区域 -->
+    <LinearLayout
+        android:id="@+id/ll_result"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/shape_card"
+        android:elevation="6dp"
+        android:padding="24dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查询结果"
+            android:textSize="16sp"
+            android:textColor="@color/text_black"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/ll_student_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btn_confirm_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="确认删除选中项"
+            android:textSize="16sp"
+            android:textColor="@color/text_white"
+            android:background="@drawable/shape_button_red"
+            android:elevation="4dp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+</LinearLayout>

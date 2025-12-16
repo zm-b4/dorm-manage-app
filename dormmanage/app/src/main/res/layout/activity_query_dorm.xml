@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 外层ScrollView：控制整个页面滚动 -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:fillViewport="true"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true"
+        android:paddingTop="20dp">
+
+        <!-- 标题（精简） -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="学生宿舍信息查询"
+            android:textSize="18sp"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- 查询区域（最小化占比） -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/bg_white"
+            android:elevation="4dp"
+            android:padding="10dp"
+            android:radius="8dp"
+            android:layout_marginBottom="10dp">
+
+            <!-- 查询类型选择 -->
+            <RadioGroup
+                android:id="@+id/rg_query_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="8dp">
+
+                <RadioButton
+                    android:id="@+id/rb_stu_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="学号"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_black"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/rb_college"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="学院"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_black"/>
+
+                <RadioButton
+                    android:id="@+id/rb_class"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="班级"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_black"/>
+
+                <RadioButton
+                    android:id="@+id/rb_dorm_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="宿舍号"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_black"/>
+
+                <RadioButton
+                    android:id="@+id/rb_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="全部学生"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_black"/>
+
+            </RadioGroup>
+
+            <!-- 查询输入框（全部时隐藏） -->
+            <EditText
+                android:id="@+id/et_query_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入查询内容"
+                android:textSize="14sp"
+                android:textColorHint="@color/text_gray"
+                android:textColor="@color/text_black"
+                android:padding="6dp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- 功能按钮 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_query"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="查询"
+                    android:textSize="14sp"
+                    android:background="@color/primary"
+                    android:textColor="@color/text_white"
+                    android:padding="8dp"/>
+
+                <Button
+                    android:id="@+id/btn_clear"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="清空"
+                    android:textSize="14sp"
+                    android:background="@color/text_gray"
+                    android:textColor="@color/text_white"
+                    android:padding="8dp"
+                    android:layout_marginLeft="6dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 结果区域（占满剩余空间） -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/bg_white"
+            android:elevation="4dp"
+            android:padding="15dp"
+            android:radius="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="查询结果"
+                android:textSize="16sp"
+                android:textColor="@color/text_black"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- 自定义ListView：禁用自身滚动，高度自适应 -->
+            <com.example.dormmanage.NoScrollListView
+                android:id="@+id/lv_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/gray_light"
+                android:dividerHeight="1dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
